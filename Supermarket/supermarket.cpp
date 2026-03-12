@@ -44,6 +44,7 @@ void addItem(Bill b){
         cin>>choice;
 
         if(choice==1){
+            system("cls");
             string item;
             int rate, quantity;
 
@@ -58,10 +59,25 @@ void addItem(Bill b){
             cout<<"\tEnter Quantity: ";
             cin>>quantity;
             b.setQuantity(quantity);
+
+            ofstream out("C:/Users/as625/OneDrive/Desktop/C++Projects/Supermarket/Bill.txt", ios::app);
+            if(!out){
+                cout<<"\tError: Can't Open File"<<endl;
+            }
+            else out<<"\t"<<b.getItem()<<" : "<<b.getRate()<<" : "<<b.getQuantity()<<endl<<endl;
+
+            out.close();
+
+            cout<<"Item added succesfully"<<endl;
+            Sleep(3000);
         }
 
-        ofstream out("C:/Users/as625/OneDrive/Desktop/C++Projects/Bill.txt", ios::app);
-
+        else if(choice==2){
+            system("cls");
+            close=1;
+            cout<<"\tBack to Main Menu"<<endl;
+            Sleep(3000);
+        }
     }
 }
 
@@ -80,8 +96,8 @@ int main(){
         cin>>val;
 
         if(val==1){
+            addItem(b);
 
         }
-
     }
 }
