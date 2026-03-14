@@ -126,8 +126,14 @@ int main(){
             ofstream outFile("C:/Users/as625/OneDrive/Desktop/C++Projects/Hostel Accommodation System/students.txt", ios::app);
             outFile<<"\t"<<s.getName()<<" : "<<s.getRollNo()<<" : "<<s.getAddress()<<endl<<endl;
             cout<<"Student Data Saved."<<endl; 
-            outFile.close();          
+            Sleep(5000);         
 
+        }
+        else if(val==2){
+            system("cls");
+            exit=1;
+            cout<<"Thankyou for choosing us"<<endl;
+            Sleep(3000);
         }
     }
 }
